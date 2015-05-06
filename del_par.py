@@ -15,15 +15,15 @@ where table_name=\'bs_detail\' and (to_days(substring(partition_name,2,8 )\
 ''')
     rows=cur.fetchall()
     try:
-        if len(rows)==0 :
+        if len(rows) == 0:
             if raw_input("没有分区需要清理，按回车（Enter）键继续... "):
                 sys.exit()
         else:
             for row in rows:
-                cur.execute('alter table bs_detail drop partition %s' %row)
+                cur.execute('alter table bs_detail drop partition %s' % row)
                 print '分区%s已删除' %row
             if raw_input("分区清理结束，共清理分区%s个，按回车（Enter）键继续... " %len(rows)):
                 sys.exit()
             
-    except Exception,e:
+    except Exception, e:
         print e
