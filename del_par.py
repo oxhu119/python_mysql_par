@@ -1,6 +1,6 @@
 # -*- coding: cp936 -*-
 # 本程序用来删除bs_detail表中超92天及大于当前日期的分区
-#2015-04-28 humengjun@julong.cc
+#2015-04-28 humengjun@julong.cc work for BOC
 
 import MySQLdb as mdb
 import sys
